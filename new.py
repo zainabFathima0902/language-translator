@@ -3,18 +3,18 @@ from tkinter import ttk, messagebox
 from googletrans import Translator, LANGUAGES
 
 def change(text="type", src="English", dest="Hindi"):
-    trans = Translator()
+    trans=Translator()
     try:
-        trans1 = trans.translate(text, src=src, dest=dest)
+        trans1=trans.translate(text,src=src, dest=dest)
         return trans1.text
     except Exception as e:
         return f"Error: {str(e)}"
 
 def data():
-    s = comb_sor.get()
+    s =comb_sor.get()
     d = comb_des.get()
-    masg = sor_txt.get(1.0, END)
-    textget = change(text=masg, src=s, dest=d)
+    masg=sor_txt.get(1.0, END)
+    textget=change(text=masg, src=s, dest=d)
     des_txt.delete(1.0, END)
     des_txt.insert(END, textget)
 
@@ -34,12 +34,12 @@ def handle_translate():
     if validate_translation():
         data()
 
-container = Tk()
+container=Tk()
 container.title("Translator")
 container.geometry("500x700")
 container.config(bg="Red")
 
-lab_txt = Label(container, text="Translator", font=("Times New Roman", 40, "bold"))
+lab_txt=Label(container, text="Translator", font=("Times New Roman", 40, "bold"))
 lab_txt.place(x=100, y=40, height=50, width=300)
 
 lab_src_txt = Label(container, text="Source Text", font=("Times New Roman", 20, "bold"), bg="red")
